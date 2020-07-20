@@ -113,10 +113,10 @@ Public Class ProductContextSession
         End If
         If _products.Rows.Count > 0 Then
             Dim p As New Product
-            p.Id = _products.Rows(CurrentRow).Field(Of Integer)(Column.Id.ToString)
-            p.Code = _products.Rows(CurrentRow).Field(Of String)(Column.Code.ToString)
-            p.Name = _products.Rows(CurrentRow).Field(Of String)(Column.Name.ToString)
-            p.Price = _products.Rows(CurrentRow).Field(Of Double)(Column.Price.ToString)
+            p.Id = _products.Rows(CurrentRow).Item(Column.Id.ToString)
+            p.Code = _products.Rows(CurrentRow).Item(Column.Code.ToString)
+            p.Name = _products.Rows(CurrentRow).Item(Column.Name.ToString)
+            p.Price = _products.Rows(CurrentRow).Item(Column.Price.ToString)
             CurrentRow += 1
             Product = p
             Return True
@@ -128,10 +128,10 @@ Public Class ProductContextSession
     Public Function NextRecord() As Boolean
         If _products.Rows.Count > CurrentRow Then
             Dim p As New Product
-            p.Id = _products.Rows(CurrentRow).Field(Of Long)(Column.Id.ToString)
-            p.Code = _products.Rows(CurrentRow).Field(Of String)(Column.Code.ToString)
-            p.Name = _products.Rows(CurrentRow).Field(Of String)(Column.Name.ToString)
-            p.Price = _products.Rows(CurrentRow).Field(Of Decimal)(Column.Price.ToString)
+            p.Id = _products.Rows(CurrentRow).Item(Column.Id.ToString)
+            p.Code = _products.Rows(CurrentRow).Item(Column.Code.ToString)
+            p.Name = _products.Rows(CurrentRow).Item(Column.Name.ToString)
+            p.Price = _products.Rows(CurrentRow).Item(Column.Price.ToString)
             CurrentRow += 1
             Product = p
             Return True
